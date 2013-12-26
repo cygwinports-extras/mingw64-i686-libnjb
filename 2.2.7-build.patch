@@ -34,3 +34,18 @@
  	$(INSTALL) libnjb.def $(DESTDIR)$(libdir)
 -	$(INSTALL) libnjb.lib $(DESTDIR)$(libdir)
  endif
+--- origsrc/libnjb-2.2.7/src/libnjb.h.in	2007-11-10 18:06:29.000000000 -0600
++++ src/libnjb-2.2.7/src/libnjb.h.in	2013-12-26 01:51:09.501784700 -0600
+@@ -31,11 +31,9 @@
+ /* Windows specific code, types that do not exist in Windows
+  * sys/types.h
+  */
+-typedef char int8_t;
++#include <stdint.h>
+ typedef unsigned char u_int8_t;
+-typedef __int16 int16_t;
+ typedef unsigned __int16 u_int16_t;
+-typedef __int32 int32_t;
+ typedef unsigned __int32 u_int32_t;
+ typedef unsigned __int64 u_int64_t;
+ #endif
